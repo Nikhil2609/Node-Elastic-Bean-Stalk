@@ -9,7 +9,7 @@ phases:
   build:              # 2️⃣ compile TypeScript → JavaScript
     commands:
       - npm run build   # assumes "build": "tsc" (outDir = dist)
- post_build:
+  post_build:
     commands:
       - echo "▶️ Preparing deployment bundle"
       - cp package*.json dist/
