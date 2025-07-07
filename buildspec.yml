@@ -1,0 +1,16 @@
+version: 1
+
+phases:
+  install:            # 1️⃣ install prod & dev dependencies
+    runtime-versions:
+      nodejs: 18      # pick the Node runtime your EB env supports
+    commands:
+      - npm install
+  build:              # 2️⃣ compile TypeScript → JavaScript
+    commands:
+      - npm run build   # assumes "build": "tsc" (outDir = dist)
+
+artifacts:            # 3️⃣ upload only compiled output
+  base-directory: dist       # dist/ becomes the root of the ZIP
+  files:
+    - '**/*'                # everything inside dist/
