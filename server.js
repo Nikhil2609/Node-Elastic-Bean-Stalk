@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
     console.log("API request", req, res);
-    res.send("Hello World from Elastic BeanStalk");
+    res.send("Hello World from Elastic BeanStalk, using Bean Stalk");
 })
 
 app.listen(PORT, () => { console.log("Server Running on Port =>",PORT) })
