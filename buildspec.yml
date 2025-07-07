@@ -9,6 +9,10 @@ phases:
   build:              # 2️⃣ compile TypeScript → JavaScript
     commands:
       - npm run build   # assumes "build": "tsc" (outDir = dist)
+ post_build:
+    commands:
+      - echo "▶️ Preparing deployment bundle"
+      - cp package*.json dist/
 
 artifacts:            # 3️⃣ upload only compiled output
   base-directory: dist       # dist/ becomes the root of the ZIP
